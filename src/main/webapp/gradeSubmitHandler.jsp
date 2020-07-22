@@ -3,19 +3,25 @@
 <%@ page import="com.grade.webapp.GradeSubject" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="java.time.format.DateTimeFormatter" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Grade Form</title>
+    <title>Submit Handler</title>
 </head>
 <body>
-<jsp:include page="/navigator.jsp"/>
+
 <%
+
+    //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+
     String id = request.getParameter("id");
     LocalDateTime dateAdded = LocalDateTime.now();
     String subject = request.getParameter("subject");
     String value = request.getParameter("value");
     String corrected = request.getParameter("corrected");
+
+
 
    Grade grade = Grade.builder()
             .id(Long.parseLong(id))

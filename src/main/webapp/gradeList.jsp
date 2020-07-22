@@ -29,6 +29,8 @@
             "<th>Subject</th>" +
             "<th>Value</th>" +
             "<th>Corrected</th>" +
+            "<th>Edit</th>" +
+            "<th>Delete</th>" +
             "</tr>");
     for (int i = 0; i < gradeList.size(); i++) {
         out.print("<tr>");
@@ -47,10 +49,11 @@
         out.print("<td>");
         out.println(gradeList.get(i).isCorrected());
         out.print("</td>");
-        out.println("<a href=\"gradeEditHandler.jsp?studentIndex="+gradeList.get(i).getId()+"\">Edit</a>");
+        out.print("<td>");
+        out.println("<a href=\"gradeEditHandler.jsp?gradeIndex="+gradeList.get(i).getId()+"\">Edit</a>");
         out.print("</td>");
         out.print("<td>");
-        out.println("<a href=\"gradeDeleteHandler.jsp?studentIndex="+gradeList.get(i).getId()+"\">Delete</a>");
+        out.println("<a href=\"gradeDeleteHandler.jsp?gradeIndex="+gradeList.get(i).getId()+"\">Delete</a>");
         out.print("</td></tr>");
     }
     out.print("</table>");

@@ -14,7 +14,7 @@
 </head>
 <body>
 <%
-    String gradeId = request.getParameter("gradeId");
+    Long gradeId = Long.parseLong(request.getParameter("gradeIndex"));
     Object gradeListResult = session.getAttribute("gradeList");
     List<Grade> gradeList;
     if(gradeListResult instanceof List){
@@ -25,6 +25,7 @@
     for (int i = 0; i < gradeList.size(); i++) {
         if (gradeList.get(i).getId().equals(gradeId)){
             gradeList.remove(gradeList.get(i));
+            break;
         }
     }
     session.setAttribute("gradeList",gradeList);
